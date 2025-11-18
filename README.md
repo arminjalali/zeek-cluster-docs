@@ -56,8 +56,7 @@ This Zeek cluster is designed for **three VMs**.
 - Runs:
   - `worker-2`
 
-> ⚠️ All IPs are placeholders. Replace them with your real addresses, or with generic examples like `10.0.0.10`, `10.0.0.11`, `10.0.0.12` – avoid publishing your real private IPs publicly.
-
+> ⚠️ All IPs are placeholders. Replace them with your real addresses, or with generic examples like `10.0.0.10`, `10.0.0.11`, `10.0.0.12`
 ---
 
 ## 📡 Cluster Architecture (Anonymized)
