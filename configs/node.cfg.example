@@ -1,0 +1,33 @@
+# Example Zeek node.cfg for a 3-VM cluster.
+# Replace MANAGER_IP, WORKER1_IP, WORKER2_IP with your own IPs or hostnames.
+# Adjust interface names and lb_procs values as needed.
+
+[logger-1]
+type=logger
+host=MANAGER_IP
+env_vars=log_rotate_interval=3600
+
+[manager]
+type=manager
+host=MANAGER_IP
+env_vars=cluster_store_interval=300
+
+[proxy-1]
+type=proxy
+host=MANAGER_IP
+
+[worker-1]
+type=worker
+host=WORKER1_IP
+interface=ens160
+lb_method=af_packet
+lb_procs=4
+env_vars=af_packet_buffer_size=128*1024*1024
+
+[worker-2]
+type=worker
+host=WORKER2_IP
+interface=ens160
+lb_method=af_packet
+lb_procs=4
+env_vars=af_packet_buffer_size=128*1024*1024

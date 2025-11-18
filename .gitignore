@@ -1,0 +1,14 @@
+# Editor / OS files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Python cache (if any Python scripts get added later)
+__pycache__/
+*.pyc
+
+# Example: ignore a single private file
+secret-notes.txt
+"Zeek Credential.txt"
+Zeek.txt
