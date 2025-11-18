@@ -113,7 +113,7 @@ This Zeek cluster is designed for **three VMs**.
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/<your-user>/zeek-cluster.git
+git clone https://github.com/arminjalali/zeek-cluster.git
 cd zeek-cluster
 ```
 
@@ -198,15 +198,15 @@ See `docs/06-best-practices.md` for full details.
 
 | Item | Status |
 |------|--------|
-| Zeek installed on all 3 VMs                 | ⬜ |
-| AF_PACKET configured on workers             | ⬜ |
-| NIC offloads disabled on capture interfaces | ⬜ |
-| Sysctl tuning applied from `sysctl-zeek.conf` | ⬜ |
-| Passwordless SSH (manager → workers)        | ⬜ |
-| `node.cfg` configured correctly             | ⬜ |
-| `zeekctl deploy` completes successfully     | ⬜ |
-| Packet drops within acceptable range        | ⬜ |
-| Log rotation working, disk usage stable     | ⬜ |
+| Zeek installed on all 3 VMs                 | 🟩 |
+| AF_PACKET configured on workers             | 🟩 |
+| NIC offloads disabled on capture interfaces | 🟩 |
+| Sysctl tuning applied from `sysctl-zeek.conf` | 🟩 |
+| Passwordless SSH (manager → workers)        | 🟩 |
+| `node.cfg` configured correctly             | 🟩 |
+| `zeekctl deploy` completes successfully     | 🟩 |
+| Packet drops within acceptable range        | 🟥 |
+| Log rotation working, disk usage stable     | 🟥 |
 
 ---
 
