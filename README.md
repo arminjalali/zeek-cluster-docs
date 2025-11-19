@@ -116,29 +116,48 @@ git clone https://github.com/arminjalali/zeek-cluster.git
 cd zeek-cluster
 ```
 
+---
+
 ### 2️⃣ Run auto installer (on each node)
 
-> Run this on **Ubuntu 24.04** manager and worker VMs.  
-> Adjust interface name (`ens160` etc.) and paths if your environment differs.
+> Run this on **all 3 Ubuntu 24.04 VMs**  
+> – 1 Manager VM  
+> – 2 Worker VMs  
+>
+> ⚠️ Must be executed **as root**  
+> ⚙️ Adjust interface name (`ens160`) if needed
 
 ```bash
 sudo bash scripts/auto_install.sh
 ```
 
-This will:
+This script will automatically:
 
-- Add the Zeek repository for Ubuntu 24.04
-- Install Zeek
-- Add `/opt/zeek/bin` to PATH (via `/etc/profile`)
-- Apply Linux capabilities to `/opt/zeek/bin/zeek`
-- Apply sysctl tuning (if `configs/sysctl-zeek.conf` is present)
+- Add the Zeek repository for Ubuntu 24.04  
+- Install Zeek  
+- Add `/opt/zeek/bin` to PATH (via `/etc/profile`)  
+- Apply Linux capabilities to `/opt/zeek/bin/zeek`  
+- Apply sysctl tuning (if `configs/sysctl-zeek.conf` exists)
+
+---
 
 ### 3️⃣ Configure the cluster (manager only)
+
+Copy the template:
 
 ```bash
 sudo cp configs/node.cfg.example /opt/zeek/etc/node.cfg
 sudo nano /opt/zeek/etc/node.cfg
 ```
+
+Update the following fields:
+
+- `manager` IP  
+- `worker` IPs  
+- `interface=` (your NIC name)  
+- `lb_procs=` (AF_PACKET worker count)
+
+---
 
 ### 4️⃣ Set up passwordless SSH (manager → workers)
 
@@ -148,6 +167,15 @@ ssh-copy-id root@WORKER1_IP
 ssh-copy-id root@WORKER2_IP
 ```
 
+Verify:
+
+```bash
+ssh root@WORKER1_IP hostname
+ssh root@WORKER2_IP hostname
+```
+
+---
+
 ### 5️⃣ Deploy the cluster (manager only)
 
 ```bash
@@ -155,6 +183,14 @@ zeekctl deploy
 zeekctl status
 zeekctl netstats
 ```
+
+Expected result:
+
+- Manager → running  
+- Proxy → running  
+- Logger → running  
+- Worker-1 → running  
+- Worker-2 → running  
 
 ---
 
