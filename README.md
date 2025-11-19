@@ -113,8 +113,8 @@ This Zeek cluster is designed for **three VMs**.
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/arminjalali/zeek-cluster.git
-cd zeek-cluster
+git clone https://github.com/arminjalali/zeek-cluster-docs.git
+cd zeek-cluster-docs
 ```
 
 ---
