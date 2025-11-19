@@ -1,6 +1,6 @@
 # 🛡️ Zeek Cluster – Production Deployment & Operations Guide
 
-![Zeek Version](https://img.shields.io/badge/Zeek-5.2.0-brightgreen)
+![Zeek Version](https://img.shields.io/badge/Zeek-8.0.4-brightgreen)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-orange)
 ![Cluster](https://img.shields.io/badge/Mode-3%E2%80%91VM%20Cluster-green)
 ![AF--Packet](https://img.shields.io/badge/Capture-AF_PACKET-yellow)
@@ -247,8 +247,8 @@ See `docs/06-best-practices.md` for full details.
 
 ## 🧪 Deployment Checklist
 
-🟩 = completed / verified
-🟥 = planned / future work / optional enhancements
+-🟩 = completed / verified
+-🟥 = planned / future work / optional enhancements
 
 
 | Item | Status |
