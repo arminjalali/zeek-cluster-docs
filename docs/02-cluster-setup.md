@@ -146,5 +146,5 @@ If you configure a metrics port (e.g. `MetricsPort = 9991`) in Zeek, ensure fire
 
 ## 7️⃣ Next steps
 
-- Apply performance and AF_PACKET tuning: [`03-optimization.md`](docs/03-optimization.md)
-- Set up monitoring scripts: [`docs/04-monitoring.md`](04-monitoring.md)
+- Apply performance and AF_PACKET tuning: [`03-optimization.md`](03-optimization.md)
+- Set up monitoring scripts: [`04-monitoring.md`](04-monitoring.md)
