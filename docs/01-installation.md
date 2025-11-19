@@ -70,5 +70,5 @@ dpkg -l | grep -i <word>
 
 Repeat installation on all three VMs (manager + 2 workers), then move on to:
 
-- [`docs/02-cluster-setup.md`](docs/02-cluster-setup.md)
-- [`docs/03-optimization.md`](docs/03-optimization.md)
+- [`docs/02-cluster-setup.md`](02-cluster-setup.md)
+- [`docs/03-optimization.md`](03-optimization.md)

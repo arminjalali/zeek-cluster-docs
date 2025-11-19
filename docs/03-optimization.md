@@ -182,5 +182,5 @@ in `node.cfg`.
 
 ## 7️⃣ Next steps
 
-- Configure monitoring & health scripts: [`docs/04-monitoring.md`](docs/04-monitoring.md)
+- Configure monitoring & health scripts: [`04-monitoring.md`](docs/04-monitoring.md)
 - Watch `zeekctl netstats` and `/proc/net/dev` for drops
