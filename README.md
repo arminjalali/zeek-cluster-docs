@@ -247,8 +247,8 @@ See `docs/06-best-practices.md` for full details.
 
 ## 🧪 Deployment Checklist
 
--🟩 = completed / verified
--🟥 = planned / future work / optional enhancements
+- 🟩 = completed / verified
+- 🟥 = planned / future work / optional enhancements
 
 
 | Item | Status |
