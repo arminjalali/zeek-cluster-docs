@@ -1,6 +1,11 @@
 #!/bin/bash
 # Simple Zeek cluster health check script.
 
+# Ensure zeek-cut is available (used for pretty log output)
+if ! command -v zeek-cut >/dev/null 2>&1; then
+  echo "Warning: zeek-cut not found in PATH. Some formatted outputs may not work."
+fi
+
 echo "=== Zeek Cluster Health Check ==="
 echo "Time: $(date)"
 echo

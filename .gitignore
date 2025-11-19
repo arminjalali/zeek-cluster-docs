@@ -10,5 +10,5 @@ __pycache__/
 
 # Example: ignore a single private file
 secret-notes.txt
-"Zeek Credential.txt"
+Zeek Credential.txt
 Zeek.txt

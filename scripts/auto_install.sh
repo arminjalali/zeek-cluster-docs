@@ -16,6 +16,12 @@ apt update
 echo "[*] Installing Zeek..."
 apt install -y zeek
 
+# Ensure setcap is available
+if ! command -v setcap >/dev/null 2>&1; then
+  echo "[*] Installing libcap2-bin (provides setcap)..."
+  apt install -y libcap2-bin
+fi
+
 # Add Zeek to PATH (system-wide)
 if ! grep -q "/opt/zeek/bin" /etc/profile; then
   echo "[*] Adding /opt/zeek/bin to PATH via /etc/profile..."

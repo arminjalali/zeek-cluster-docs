@@ -15,6 +15,7 @@ echo "Disk usage BEFORE cleanup:"
 df -h "$LOG_DIR"
 echo
 
+# Threshold: 5,000,000 KB (~5 GB) – adjust if needed
 current_size=$(du -s "$CURRENT_LOGS" 2>/dev/null | awk '{print $1}')
 if [ "${current_size:-0}" -gt 5000000 ]; then
   echo "[*] Large log volume detected in $CURRENT_LOGS (size: ${current_size} KB). Rotating via zeekctl cron..."

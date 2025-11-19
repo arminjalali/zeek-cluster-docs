@@ -1,6 +1,6 @@
 # 🛡️ Zeek Cluster – Production Deployment & Operations Guide
 
-![Zeek](https://img.shields.io/badge/Zeek-Network%20Security-blue)
+![Zeek Version](https://img.shields.io/badge/Zeek-5.2.0-brightgreen)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-orange)
 ![Cluster](https://img.shields.io/badge/Mode-3%E2%80%91VM%20Cluster-green)
 ![AF--Packet](https://img.shields.io/badge/Capture-AF_PACKET-yellow)
@@ -30,6 +30,7 @@ What you get:
 ## 🖥️ Deployment Environment (3 VMs)
 
 This Zeek cluster is designed for **three VMs**.
+> Tested with: Zeek X.Y on Ubuntu 24.04
 
 ### 1️⃣ Manager / Proxy / Logger
 
@@ -143,6 +144,10 @@ This script will automatically:
 
 ### 3️⃣ Configure the cluster (manager only)
 
+> 💡 Only the **manager** needs `/opt/zeek/etc/node.cfg`.  
+> Workers **DO NOT** need a node.cfg file.
+
+
 Copy the template:
 
 ```bash
@@ -198,18 +203,18 @@ Expected result:
 
 | File | Description |
 |------|-------------|
-| `docs/01-installation.md`   | Install Zeek on Ubuntu 24.04 |
-| `docs/02-cluster-setup.md`  | Cluster configuration (3-VM) |
-| `docs/03-optimization.md`   | AF_PACKET, NIC tuning, sysctl |
-| `docs/04-monitoring.md`     | Health & monitoring scripts |
-| `docs/05-troubleshooting.md`| Common errors & debugging |
-| `docs/06-best-practices.md` | Performance & security best practices |
+| [`docs/01-installation.md`](docs/01-installation.md)   | Install Zeek on Ubuntu 24.04 |
+| [`docs/02-cluster-setup.md`](docs/02-cluster-setup.md)  | Cluster configuration (3-VM) |
+| [`docs/03-optimization.md`](docs/03-optimization.md)   | AF_PACKET, NIC tuning, sysctl |
+| [`docs/04-monitoring.md`](docs/04-monitoring.md)     | Health & monitoring scripts |
+| [`docs/05-troubleshooting.md`](docs/05-troubleshooting.md)| Common errors & debugging |
+| [`docs/06-best-practices.md`](docs/06-best-practices.md) | Performance & security best practices |
 
 ---
 
 ## 🔧 Included Scripts
 
-All scripts live in `scripts/`:
+All scripts live in [`scripts/`](scripts/):
 
 - `auto_install.sh` – Install Zeek + apply base sysctl tuning
 - `health_check.sh` – Quick Zeek cluster health summary
@@ -242,6 +247,10 @@ See `docs/06-best-practices.md` for full details.
 
 ## 🧪 Deployment Checklist
 
+🟩 = completed / verified
+🟥 = planned / future work / optional enhancements
+
+
 | Item | Status |
 |------|--------|
 | Zeek installed on all 3 VMs                 | 🟩 |
@@ -251,8 +260,17 @@ See `docs/06-best-practices.md` for full details.
 | Passwordless SSH (manager → workers)        | 🟩 |
 | `node.cfg` configured correctly             | 🟩 |
 | `zeekctl deploy` completes successfully     | 🟩 |
-| Packet drops within acceptable range        | 🟥 |
-| Log rotation working, disk usage stable     | 🟥 |
+| Packet drops within acceptable range        | 🟩 |
+| Log rotation working, disk usage stable     | 🟩 |
+| SIEM integration (Elastic/Splunk/Wazuh)     | 🟥 |
+| Grafana dashboards for Zeek metrics	      | 🟥 |
+| Prometheus exporter for Zeek	              | 🟥 |
+| Automatic AF_PACKET tuning per worker       | 🟥 |
+| Auto-detect NIC model + apply optimal settings| 🟥 |
+| High-availability (HA) manager failover     | 🟥 |
+| Secure log shipping (Filebeat/Vector)	      | 🟥 |
+| Centralized alerting & notifications	      | 🟥 |
+| Web UI for cluster monitoring	              | 🟥 |
 
 ---
 

@@ -1,6 +1,6 @@
 # Example Zeek node.cfg for a 3-VM cluster.
-# Replace MANAGER_IP, WORKER1_IP, WORKER2_IP with your own IPs or hostnames.
-# Adjust interface names and lb_procs values as needed.
+# Copy this file to /opt/zeek/etc/node.cfg on the manager node only.
+# Do NOT deploy this as-is without editing IPs and interfaces.
 
 [logger-1]
 type=logger

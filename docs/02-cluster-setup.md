@@ -60,6 +60,7 @@ Example cluster configuration:
 
 ```ini
 # Zeek cluster node configuration (example 3-VM setup)
+> Only the manager uses node.cfg. The workers do not need this file.
 
 [logger-1]
 type=logger
