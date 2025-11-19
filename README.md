@@ -203,12 +203,12 @@ Expected result:
 
 | File | Description |
 |------|-------------|
-| [`docs/01-installation.md`](docs/01-installation.md)   | Install Zeek on Ubuntu 24.04 |
-| [`docs/02-cluster-setup.md`](docs/02-cluster-setup.md)  | Cluster configuration (3-VM) |
-| [`docs/03-optimization.md`](docs/03-optimization.md)   | AF_PACKET, NIC tuning, sysctl |
-| [`docs/04-monitoring.md`](docs/04-monitoring.md)     | Health & monitoring scripts |
-| [`docs/05-troubleshooting.md`](docs/05-troubleshooting.md)| Common errors & debugging |
-| [`docs/06-best-practices.md`](docs/06-best-practices.md) | Performance & security best practices |
+| [`01-installation.md`](docs/01-installation.md)   | Install Zeek on Ubuntu 24.04 |
+| [`02-cluster-setup.md`](docs/02-cluster-setup.md)  | Cluster configuration (3-VM) |
+| [`03-optimization.md`](docs/03-optimization.md)   | AF_PACKET, NIC tuning, sysctl |
+| [`04-monitoring.md`](docs/04-monitoring.md)     | Health & monitoring scripts |
+| [`05-troubleshooting.md`](docs/05-troubleshooting.md)| Common errors & debugging |
+| [`06-best-practices.md`](docs/06-best-practices.md) | Performance & security best practices |
 
 ---
 
