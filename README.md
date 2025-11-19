@@ -133,11 +133,22 @@ This will:
 - Apply Linux capabilities to `/opt/zeek/bin/zeek`
 - Apply sysctl tuning (if `configs/sysctl-zeek.conf` is present)
 
-### 3️⃣ Configure the cluster and deploy
+### 3️⃣ Configure the cluster (manager only)
 
-- Copy and adjust `configs/node.cfg.example` → `/opt/zeek/etc/node.cfg`
-- Set up passwordless SSH from manager to workers
-- Then from the manager:
+```bash
+sudo cp configs/node.cfg.example /opt/zeek/etc/node.cfg
+sudo nano /opt/zeek/etc/node.cfg
+```
+
+### 4️⃣ Set up passwordless SSH (manager → workers)
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "zeekctl"
+ssh-copy-id root@WORKER1_IP
+ssh-copy-id root@WORKER2_IP
+```
+
+### 5️⃣ Deploy the cluster (manager only)
 
 ```bash
 zeekctl deploy
